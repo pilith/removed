@@ -1,0 +1,19 @@
+# ignore django stuff
+*.log
+
+
+# virtual environment
+venv/
+
+# other parts of website
+boardgames/
+db.sqlite3
+restaurants/
+static/
+templates/
+
+# gunicorn
+gunicorn_start.sh
+run/
+
+
