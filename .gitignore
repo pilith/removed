@@ -2,8 +2,6 @@
 *.log
 
 
-# virtual environment
-venv/
 
 # other parts of website
 boardgames/

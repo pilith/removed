@@ -38,9 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # HTML tables
+    'django-tables2',
+
     # My apps
     'restaurants',
     'boardgames',
+    'removed',
 ]
 
 MIDDLEWARE = [
