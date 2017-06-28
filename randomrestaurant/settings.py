@@ -42,8 +42,8 @@ INSTALLED_APPS = [
     #'django-tables2',
 
     # My apps
-    'restaurants',
-    'boardgames',
+    #'restaurants',
+    #'boardgames',
     'removed',
 ]
 
