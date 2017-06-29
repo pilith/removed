@@ -6,7 +6,7 @@ class component(models.Model):
         ('R', 'RMA'),
         ('P', 'Production'),
     )
-    entry_date = models.DateField()
+    entry_date = models.DateField(auto_now=True)
     board = models.CharField(max_length=30)
     part_num = models.PositiveIntegerField()
     serial_num = models.PositiveIntegerField()

@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # HTML tables
-    #'django-tables2',
+    'django_tables2',
 
     # My apps
     #'restaurants',
