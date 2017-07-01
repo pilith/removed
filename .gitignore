@@ -8,7 +8,7 @@ boardgames/
 db.sqlite3
 restaurants/
 static/
-templates/
+#templates/
 
 # gunicorn
 gunicorn_start.sh
