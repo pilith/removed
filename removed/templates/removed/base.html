@@ -12,12 +12,12 @@
 <body>
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
-  
+
       <!-- Header -->
       <div class="navbar-header">
-        <a class="navbar-brand" href="{% url 'removed:removed' %}">Pilith</a>
+        <a class="navbar-brand" href="{% url 'removed:index' %}">Pilith</a>
       </div>
-  
+
       <!-- Items -->
       <div class="collapse navbar-collapse" id="topNavBar">
         <ul class="nav navbar-nav">
@@ -27,21 +27,15 @@
             </a>
           </li>
           <li class="">
-            <a href="#">
+            <a href="{% url 'removed:fixed' %}">
               <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>&nbsp;Fixed List
             </a>
           </li>
         </ul>
-  
-        <ul class="nav navbar-nav navbar-right">
-          <li class="">
-            <a href="#">
-              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;Add
-            </a>
-          </li>
-        </ul>
+{% block add_button %}
+{% endblock %}
       </div>
-  
+
     </div>
   </nav>
 
