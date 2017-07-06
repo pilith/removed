@@ -1,4 +1,5 @@
 {% extends 'removed/base.html' %}
+{% load render_table from django_tables2 %}
 
 {% block add_button %}
 <ul class="nav navbar-nav navbar-right">
@@ -12,4 +13,5 @@
 
 {% block body %}
   <h3 style="text-align:center">Removed Component Tracking</h3>
+{% render_table table %}
 {% endblock %}
