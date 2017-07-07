@@ -4,3 +4,5 @@ from django.contrib import admin
 from removed.models import component
 from removed.models import fixed_board
 admin.site.register(component)
+admin.site.register(fixed_board)
+
