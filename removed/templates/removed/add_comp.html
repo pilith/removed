@@ -1,8 +1,9 @@
 {% extends 'removed/base.html' %}
 
-{% block content %}
+{% block body %}
 <h1>New component</h1>
 <form role='form' action='' method='post'>
+  {% csrf_token %}
   {{ form.as_p }}
   <button type='submit'>Submit</button>
 </form>
