@@ -1,8 +1,18 @@
 from django.shortcuts import render
 from django_tables2 import RequestConfig
+from django.http import HttpResponseRedirect
+from django.core.urlresolvers import reverse
+
+# Models
 from .models import component
+from .models import fixed_board
+
+# Tables
 from .tables import ComponentTable
+
+# Forms
 from .forms import componentForm
+from .forms import fixedForm
 
 def index(request):
     return render(request, 'removed/index.html')
@@ -16,8 +26,27 @@ def fixed(request):
     return render(request, 'removed/fixed.html')
 
 def add_comp(request):
-    form_class = componentForm
+    if request.method != 'POST':
+        form = componentForm()
+    else:
+        form = componentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('removed:removed'))
 
     return render(request, 'removed/add_comp.html', {
-        'form': form_class,
+        'form': form,
+        })
+
+def add_board(request):
+    if request.method != 'POST':
+        form = fixedForm()
+    else:
+        form = fixedForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('removed:fixed'))
+
+    return render(request, 'removed/add_board.html', {
+        'form': form,
         })

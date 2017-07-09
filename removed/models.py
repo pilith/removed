@@ -24,6 +24,6 @@ class fixed_board(models.Model):
     board = models.CharField(max_length=30)
     serial_num = models.PositiveIntegerField(primary_key=True)
     handling = models.CharField(max_length=1, choices=board_handling)
-    notes = models.CharField(max_length=200, blank=True)
+    notes = models.CharField(max_length=200)
     user_name = models.CharField(max_length = 30)
 

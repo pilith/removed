@@ -1,0 +1,11 @@
+{% extends 'removed/base.html' %}
+
+{% block body %}
+<h1>Fixed Board Entry</h1>
+<form role='form' action='' method='post'>
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type='submit'>Submit</button>
+</form>
+{% endblock %}
+
