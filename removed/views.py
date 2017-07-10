@@ -9,6 +9,7 @@ from .models import fixed_board
 
 # Tables
 from .tables import ComponentTable
+from .tables import boardTable
 
 # Forms
 from .forms import componentForm
@@ -23,7 +24,9 @@ def removed(request):
     return render(request, 'removed/removed.html', {'table':table})
 
 def fixed(request):
-    return render(request, 'removed/fixed.html')
+    table = boardTable(component.objects.all())
+    RequestConfig(request).configure(table)
+    return render(request, 'removed/fixed.html', {'table':table})
 
 def add_comp(request):
     if request.method != 'POST':
