@@ -24,7 +24,7 @@ def removed(request):
     return render(request, 'removed/removed.html', {'table':table})
 
 def fixed(request):
-    table = boardTable(component.objects.all())
+    table = boardTable(fixed_board.objects.all())
     RequestConfig(request).configure(table)
     return render(request, 'removed/fixed.html', {'table':table})
 
