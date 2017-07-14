@@ -11,4 +11,7 @@ urlpatterns = [
     # new entries
     url(r'^removed_components/new$', views.add_comp, name='add_comp'),
     url(r'^fixed_list/new$', views.add_board, name='add_board'),
+
+    # edit entries
+    url(r'^removed_components/edit_component/(?P<comp_id>\d+)$', views.edit_comp, name='edit_comp'),
 ]

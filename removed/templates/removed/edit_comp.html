@@ -1,0 +1,11 @@
+{% extends 'removed/base.html' %}
+
+{% block body %}
+<h3 style="text-align:center">Edit component</h3>
+<form action="{% url 'removed:edit_comp' entry.id %}" method='post'>
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type='submit'>Save Changes</button>
+</form>
+{% endblock %}
+

@@ -53,3 +53,17 @@ def add_board(request):
     return render(request, 'removed/add_board.html', {
         'form': form,
         })
+
+def edit_comp(request, comp_id):
+    entry = component.objects.get(id=comp_id)
+
+    if request.method != 'POST':
+        form = componentForm(instance=entry)
+    else:
+        form = componentForm(instance=entry, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('removed:removed'))
+
+    context = { 'entry':entry, 'form':form }
+    return render(request, 'removed/edit_comp.html', context)

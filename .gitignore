@@ -7,7 +7,7 @@
 boardgames/
 db.sqlite3
 restaurants/
-static/
+#static/
 #templates/
 
 # gunicorn
