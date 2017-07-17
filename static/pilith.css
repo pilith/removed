@@ -1,0 +1,107 @@
+/* Google Fonts - fonts.google.com */
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+
+/* set global font to Source Code Pro */
+html, body {
+  font-family: 'Source Code Pro', monospace;
+  background-color: #A1A1A1;
+  height: 100%;
+  margin: 0;
+  -ms-text-size-adjust: 100%; 
+  -webkit-text-size-adjust: 100%;
+}
+.wrapper {
+  min-height: 100%;
+  /* Equal to height of footer */
+  /* But also accounting for potential margin-bottom of last child */
+  margin-bottom: -50px;
+}
+.footer, .push {
+  height: 50px; /* Footer will always be 50px high*/
+}
+.header {
+    text-align: center;
+    padding: 2.5em 2em 0;
+}
+#menu {
+    margin-left: 0px;
+    width: auto;
+    top: 0;
+    bottom: 0;
+    overflow-y: auto;
+}
+#main {
+    margin-left: 150px;
+}
+#layout {
+    position: relative;
+}
+
+h1 {
+  color: #4A0590;
+  text-align: center;
+}
+.layout {
+  margin: auto;
+  width: 60%;
+  text-align: center;
+  display: inline-block;
+  
+}
+.cow {
+  font-size: 40px;
+}
+nav {
+  margin: 10px 0;
+}
+nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+  background-color: #333;
+}
+
+nav ul li {
+  display:inline-block;
+}
+
+nav a {
+  display:block;
+  padding:0 10px;
+  line-height: 60px;
+  text-decoration:none;
+  color: white;
+}
+
+nav a:hover {
+  background-color: #000000;
+}
+
+/* Hide Dropdowns by Default */
+nav ul ul {
+  display: none;
+  position: absolute;
+  top: 60px; /* the height of the main nav */
+}
+
+/* Display Dropdowns on Hover */
+nav ul li:hover > ul {
+  display:inherit;
+}
+
+/* Fisrt Tier Dropdown */
+nav ul ul li {
+  float:none;
+  display:list-item;
+  position: relative;
+  background-color: #111;
+}
+
+/* Second, Third and more Tiers	*/
+nav ul ul ul li {
+  position: relative;
+  top:-60px;
+  left:170px;
+}
+

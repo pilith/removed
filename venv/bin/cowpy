@@ -1,5 +1,0 @@
-#!/var/www/pilith.com/venv/bin/python
-# encoding: utf-8
-
-from cowpy import cow
-cow.main()

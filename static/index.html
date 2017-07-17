@@ -1,0 +1,39 @@
+<!doctype html5>
+<html>
+<head>
+  <link rel="stylesheet" href="/static/pilith.css">
+  <link rel="stylesheet" href="/static/pure.css">
+</head>
+
+
+<body>
+  <nav>
+    <ul>
+      <li><a href='http://www.pilith.com'>Home</a></li>
+      <li><a href="#">Random Restaurants</a>
+      <!-- First Tier Drop Down -->
+      <ul>
+        <li><a href="http://www.pilith.com/random/">Random Restaurant</a></li>
+        <li><a href="http://www.pilith.com/random/dinner/">Random Dinner</a></li>
+        <li><a href="http://www.pilith.com/random/breakfast/">Random Breakfast</a></li>
+      </ul>
+      </li><!-- Ending Random rest dropdown list -->
+      <!-- starting next dropdown list -->
+      <li><a href='#'>BoardGames</a>
+      <ul>
+        <li><a href='#'>Add a Boardgame</a></li>
+        <li><a href='#'>View Your Boardgames</a></li>
+        <li><a href='#'>What you're bringing</a></li>
+      </ul>
+      </li>
+      <li style="float:right"><a href="{% url 'restaurants:credits' %}">Credits</a></li>
+    </ul>
+  </nav>
+  <h1>Pilith.com</h1>
+  <h1>hello there</h1>
+  <div class='push'></div>
+  <footer class="footer">
+    More to come I'm sure.<br>
+  </footer>
+</body>
+
