@@ -1,6 +1,5 @@
 from django import forms
-from .models import component
-from .models import fixed_board 
+from .models import component, fixed_board 
 
 class componentForm(forms.ModelForm):
     class Meta:

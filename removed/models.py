@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import RegexValidator
 
 # Create your models here.
 class component(models.Model):
@@ -18,8 +19,10 @@ class component(models.Model):
     )
     entry_date = models.DateField(auto_now=True)
     board = models.CharField(max_length=30)
-    part_num = models.PositiveIntegerField()
-    serial_num = models.PositiveIntegerField()
+    part_num = models.CharField(max_length=15, validators=[RegexValidator(r'^.{8,}$',
+        'Must be at least 8 characters')])
+    serial_num = models.PositiveIntegerField(validators=[RegexValidator(r'^\d{8}$',
+        'Must be 8 digit Serial Number','Invalid Number')])
     handling = models.CharField(max_length=1, choices=board_handling)
     notes = models.CharField(max_length=100, blank=True)
     user_name = models.CharField(max_length = 30)
@@ -34,7 +37,8 @@ class fixed_board(models.Model):
     )
     entry_date = models.DateField(auto_now=True)
     board = models.CharField(max_length=30)
-    serial_num = models.PositiveIntegerField()
+    serial_num = models.PositiveIntegerField(validators=[RegexValidator(r'^\d{8}$',
+        'Must be 8 digit Serial Number','Invalid Number')])
     handling = models.CharField(max_length=1, choices=board_handling)
     notes = models.CharField(max_length=200)
     user_name = models.CharField(max_length = 30)

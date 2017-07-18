@@ -4,16 +4,13 @@ from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 
 # Models
-from .models import component
-from .models import fixed_board
+from .models import component, fixed_board
 
 # Tables
-from .tables import ComponentTable
-from .tables import boardTable
+from .tables import ComponentTable, boardTable
 
 # Forms
-from .forms import componentForm
-from .forms import fixedForm
+from .forms import componentForm, fixedForm
 
 def index(request):
     return render(request, 'removed/index.html')
