@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # HTML tables
-    'django_tables2',
     'bootstrap3',
 
     # My apps
@@ -46,9 +45,6 @@ INSTALLED_APPS = [
     #'boardgames',
     'removed',
 ]
-BOOTSTRAP3 = {
-    'horizontal_field_class': 'col-md-4',
-    }
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
