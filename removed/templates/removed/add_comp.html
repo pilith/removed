@@ -1,11 +1,16 @@
 {% extends 'removed/base.html' %}
+{% load bootstrap3 %}
 
 {% block body %}
 <h3 style="text-align:center">New component</h3>
-<form role='form' action='' method='post'>
+<form role='form' action='' method='post' style='width:25%'>
   {% csrf_token %}
-  {{ form.as_p }}
-  <button type='submit'>Submit</button>
+  {% bootstrap_form form %}
+  {% buttons %}
+        <button type="submit" class="btn btn-primary">
+            Submit
+        </button>
+    {% endbuttons %}
 </form>
 {% endblock %}
 

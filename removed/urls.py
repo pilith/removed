@@ -14,4 +14,5 @@ urlpatterns = [
 
     # edit entries
     url(r'^removed_components/edit_component/(?P<comp_id>\d+)$', views.edit_comp, name='edit_comp'),
+    url(r'^removed_components/edit_board/(?P<board_id>\d+)$', views.edit_board, name='edit_board'),
 ]

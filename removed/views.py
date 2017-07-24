@@ -68,3 +68,17 @@ def edit_comp(request, comp_id):
 
     context = { 'entry':entry, 'form':form }
     return render(request, 'removed/edit_comp.html', context)
+
+def edit_board(request, board_id):
+    entry = fixed_board.objects.get(id=board_id)
+
+    if request.method != 'POST':
+        form = fixedForm(instance=entry)
+    else:
+        form = fixedForm(instance=entry, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('removed:fixed'))
+
+    context = { 'entry':entry, 'form':form }
+    return render(request, 'removed/edit_board.html', context)

@@ -33,7 +33,7 @@
                 <th>{{ board.serial_num }}</th>
                 <th>{{ board.handling }}</th>
                 <th>{{ board.notes }}</th>
-                <th><a href="#">Edit</a></th>
+                <th><a href="{% url 'removed:edit_board' board.id %}">Edit</a></th>
             </tr>
         {% endfor %}
         </tbody>
