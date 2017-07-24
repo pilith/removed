@@ -41,8 +41,6 @@ INSTALLED_APPS = [
     'bootstrap3',
 
     # My apps
-    #'restaurants',
-    #'boardgames',
     'removed',
 ]
 
