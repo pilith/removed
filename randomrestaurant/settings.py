@@ -39,12 +39,16 @@ INSTALLED_APPS = [
 
     # HTML tables
     'django_tables2',
+    'bootstrap3',
 
     # My apps
     #'restaurants',
     #'boardgames',
     'removed',
 ]
+BOOTSTRAP3 = {
+    'horizontal_field_class': 'col-md-4',
+    }
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

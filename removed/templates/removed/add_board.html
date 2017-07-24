@@ -1,11 +1,16 @@
 {% extends 'removed/base.html' %}
+{% load bootstrap3 %}
 
 {% block body %}
-<h1>Fixed Board Entry</h1>
-<form role='form' action='' method='post'>
+<h3 style="text-align:center">Fixed Board Entry</h3>
+<form role='form' action='' method='post' style='width:25%'>
   {% csrf_token %}
-  {{ form.as_p }}
-  <button type='submit'>Submit</button>
+  {% bootstrap_form form %}
+  {% buttons %}
+        <button type="submit" class="btn btn-primary">
+            Submit
+        </button>
+    {% endbuttons %}
 </form>
 {% endblock %}
 

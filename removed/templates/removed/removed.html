@@ -11,6 +11,16 @@
 {% endblock %}
 
 {% block body %}
+  {% if messages %}
+  <div class="alert alert-success alert-dismissable">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+  </div>
+  </ul>
+{% endif %}
   <h3 style="text-align:center">Removed Component Tracking</h3>
     <table id="myTable" border="2" class="table table-hover">
       <thead>

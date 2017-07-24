@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
+from django.contrib import messages
 
 # Models
 from .models import component, fixed_board
@@ -38,6 +39,7 @@ def add_comp(request):
                     new_entry.bag_id = year + '-' + str(1)
 
             new_entry.save()
+            messages.info(request, "Your bag id is: " + new_entry.bag_id)
             return HttpResponseRedirect(reverse('removed:removed'))
 
     return render(request, 'removed/add_comp.html', { 'form': form, })
