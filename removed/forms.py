@@ -4,7 +4,7 @@ from .models import component, fixed_board
 class componentForm(forms.ModelForm):
     class Meta:
         model = component
-        fields = ['board', 'serial_num', 'part_num', 
+        fields = ['board', 'serial_num', 'part_num', 'ref_des',
                   'handling', 'notes']
         widgets = {'notes': forms.Textarea(attrs={'cols':80, 'rows':1})}
 

@@ -16,6 +16,7 @@ class component(models.Model):
     handling = models.CharField(max_length=10, choices=board_handling)
     notes = models.CharField(max_length=100, blank=True)
     user_name = models.CharField(max_length = 30)
+    ref_des = models.CharField(max_length = 150)
     bag_id = models.CharField(max_length = 10, unique=True)
 
     
