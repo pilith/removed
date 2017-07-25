@@ -30,6 +30,6 @@ class fixed_board(models.Model):
     serial_num = models.PositiveIntegerField(validators=[RegexValidator(r'^\d{8}$',
         'Must be 8 digit Serial Number','Invalid Number')])
     handling = models.CharField(max_length=11, choices=board_handling)
-    notes = models.CharField(max_length=200)
+    notes = models.TextField()
     user_name = models.CharField(max_length = 30)
 
