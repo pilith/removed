@@ -1,35 +1,40 @@
-<!DOCTYPE html5>
-{% load staticfiles %}
+{% load static %}
 <html>
 <head>
-  <link href="{% static "pilith.css" %}" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+  	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'restaurants/pilith.css' %}">
 </head>
+
+
 <body>
+  <div class="site-wrapper">
+    <div class="site-wrapper-inner">
+      <div class="cover-container">
+        <div class="masthead clearfix">
+          <div class="inner">
+            <h3 class="masthead-brand">Pilith.com</h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li><a href='http://www.pilith.com'>Home</a></li>
+                  <li><a href="{% url 'restaurants:index' %}">Lunch</a></li>
+                  <li><a href='#'>Boardgames</a></li>
+                  <li><a href="{% url 'restaurants:credits' %}">Credits</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
 
-<nav>
-  <ul>
-    <li><a href='http://www.pilith.com'>Home</a></li>
-    <li><a href="#">Random Restaurants</a>
-    <!-- First Tier Drop Down -->
-    <ul>
-      <li><a href="{% url 'restaurants:index' %}">Random Restaurant</a></li>
-      <li><a href="{% url 'restaurants:dinner' %}">Random Dinner</a></li>
-      <li><a href="{% url 'restaurants:breakfast' %}">Random Breakfast</a></li>
-    </ul>
-    </li><!-- Ending Random rest dropdown list -->
-    <!-- starting next dropdown list -->
-    <li><a href='#'>BoardGames</a>
-    <ul>
-      <li><a href='#'>Add a Boardgame</a></li>
-      <li><a href='#'>View Your Boardgames</a></li>
-      <li><a href='#'>What you're bringing</a></li>
-    </ul>
-    </li>
-    <li style="float:right"><a href="{% url 'restaurants:credits' %}">Credits</a></li>
-  </ul>
-</nav>
+          <div class="inner cover">
+            {% block content %}{% endblock content %}
+          </div>
+        </div>
+      </div>
+    </div>
 
-{% block content %}{% endblock content %}
 
 </body>
 </html>

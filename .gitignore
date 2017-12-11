@@ -1,6 +1,6 @@
 # ignore django stuff
 *.log
-
+randomrestaurant/secret_key.py
 
 
 # other parts of website
@@ -14,4 +14,5 @@ restaurants/
 gunicorn_start.sh
 run/
 
-
+# virtual environment
+venv/
