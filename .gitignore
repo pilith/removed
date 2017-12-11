@@ -6,7 +6,7 @@ randomrestaurant/secret_key.py
 # other parts of website
 boardgames/
 db.sqlite3
-restaurants/
+#restaurants/
 #static/
 #templates/
 
