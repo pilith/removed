@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     # My apps
     'removed',
     'restaurants',
+    'dnd',
 ]
 
 MIDDLEWARE = [
@@ -134,3 +135,5 @@ STATIC_URL = '/static/'
 STATIC_ROOT = '/var/www/pilith.com/static/'
 #STATICFILES_DIRS = [ '/var/www/static/' ]
 
+# re direct to index after login instead of going to accounts/profile
+LOGIN_REDIRECT_URL = '/random/'

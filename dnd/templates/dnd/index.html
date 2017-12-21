@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <h1 class="cover-heading">Make a DnD character</h1>
+  {% if user.is_authenticated %}
+    <p class='lead'> Welcome {{user.get_username}}</p>
+  {% else %}
+    <p class='lead'> Please sign up/sign in to roll a character</p>
+    <a href="{% url 'login' %}?next={{request.path}}">Login</a>
+  {% endif %}
+
+{% endblock content %}
+
