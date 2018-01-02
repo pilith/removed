@@ -1,6 +1,10 @@
 appdirs==1.4.3
-Django==1.10.6
+cowpy==1.0.1
+Django==2.0.1
 django-bootstrap3==9.0.0
+gunicorn==19.7.1
 packaging==16.8
 pyparsing==2.2.0
+pytz==2017.3
 six==1.10.0
+virtualenv==15.1.0

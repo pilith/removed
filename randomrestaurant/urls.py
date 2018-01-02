@@ -1,13 +1,13 @@
-from django.conf.urls import url, include
+from django.urls import path, include
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^removed/', include('removed.urls', namespace='removed')),
-    url(r'^random/', include('restaurants.urls', namespace='restaurants')),
-    url(r'^dnd/', include('dnd.urls', namespace='dnd')),
+    path('admin/', admin.site.urls),
+    path('removed/',include('removed.urls', namespace='removed')),
+    path('random/', include('restaurants.urls', namespace='restaurants')),
+    path('dnd/', include('dnd.urls', namespace='dnd')),
 
-    # account URLs for login, logout, password management
-    url(r'^accounts/', include('django.contrib.auth.urls')),
+    # account paths for login, logout, password management
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
 

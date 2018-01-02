@@ -3,15 +3,15 @@
 
 {% block content %}
 
-  <h1 class="cover-heading">Make a DnD character</h1>
-  {% if user.is_authenticated %}
-    <p class='lead'> Welcome {{user.get_username}}</p>
-    <a class='btn btn-lg btn-success' href='{% url 'dnd:new_char' %}' role='button'>New Character</a>
-    <a class='btn btn-lg btn-secondary' href='#' role='button'>Edit Character</a>
-  {% else %}
-    <p class='lead'> Please sign up/sign in to roll a character</p>
-    <a href="{% url 'login' %}?next={{request.path}}">Login</a>
-  {% endif %}
+<h1 class="cover-heading">Make a DnD character</h1>
+<form role='form' action='' method='post'>
+  {% csrf_token %}
+  {{ form }}
+  <input type='submit' value='Submit' />
+</form> 
+
+
+
 
 
 <div class='fixed-bottom'>

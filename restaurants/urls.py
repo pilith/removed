@@ -3,6 +3,7 @@
 from django.conf.urls import url
 from . import views
 
+app_name = 'restaurants'
 urlpatterns = [
     # home page
     url(r'^$', views.index, name='index'),
