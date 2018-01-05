@@ -3,6 +3,7 @@ cowpy==1.0.1
 Django==2.0.1
 django-bootstrap3==9.0.0
 django-bootstrap4==0.0.5
+django-multiselectfield==0.1.8
 gunicorn==19.7.1
 jedi==0.11.1
 packaging==16.8
