@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # HTML tables
+    # HTML 
+    'multiselectfield',
     'bootstrap4',
 
     # My apps

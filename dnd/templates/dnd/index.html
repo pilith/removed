@@ -6,8 +6,21 @@
   <h1 class="cover-heading">Make a DnD character</h1>
   {% if user.is_authenticated %}
     <p class='lead'> Welcome {{user.get_username}}</p>
+    <div class='row'>
+      {% for character in user.characters.all %}
+        <div class='col-sm-2'>
+          <div class='card'>
+            <div class='card-title'>
+              <h5 class='card-title'>{{ character.name }}</h5>
+              <p class='card-text'>{{ character.class }} {{ character.race }}<br>
+                Level: {{ character.level }}</p>
+              <a href='#' class='btn btn-secondary' role='button'>View Character</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
     <a class='btn btn-lg btn-success' href='{% url 'dnd:new_char' %}' role='button'>New Character</a>
-    <a class='btn btn-lg btn-secondary' href='#' role='button'>Edit Character</a>
   {% else %}
     <p class='lead'> Please sign up/sign in to roll a character</p>
     <a href="{% url 'login' %}?next={{request.path}}">Login</a>

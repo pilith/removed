@@ -1,5 +1,6 @@
 <!doctype html>
 {% load static %}
+
 <html lang=en>
 <head>
   <meta charset="utf-8">
@@ -36,8 +37,9 @@
               </nav>
             </div>
           </div>
-
-          {% block content %}{% endblock content %}
+          <div class='inner-cover'>
+            {% block content %}{% endblock content %}
+          </div>
         </div>
       </div>
     </div>

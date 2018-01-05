@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load bootstrap4 %}
 
 {% block content %}
 
@@ -14,27 +15,19 @@
     <p>Please login to see this page.</p>
     {% endif %}
 {% endif %}
+<div class='container'>
+  <form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+      <button class='btn btn-default' type='submit'>Sign Up</button>
+    {% endbuttons %}
+      
+  </form>
 
-<form method="post" action="{% url 'login' %}">
-{% csrf_token %}
-
-<div>
-  <td>{{ form.username.label_tag }}</td>
-  <td><font color='black'>{{ form.username }}</font></td>
+  {# Assumes you setup the password_reset view in your URLconf #}
+  <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+  <p><a href="/signup/">New User</a></p>
 </div>
-<div>
-  <td>{{ form.password.label_tag }}</td>
-  <td><font color='black'>{{ form.password }}</font></td>
-</div>
-
-<div>
-  <input type="submit" value="login" color:#333 />
-  <input type="hidden" name="next" value="{{ next }}" />
-</div>
-</form>
-
-{# Assumes you setup the password_reset view in your URLconf #}
-<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
-<p><a href="/signup/">New User</a></p>
 
 {% endblock %}

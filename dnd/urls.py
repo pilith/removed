@@ -7,7 +7,7 @@ urlpatterns = [
     # home page
     url(r'^$', views.index, name='index'),
     url(r'^dnd/new$', views.new_char, name='new_char'),
-    #url(r'^dnd/edit$', views.edit_char, name='edit_char'),
+#    url(r'^dnd/edit$', views.edit_char, name='edit_char'),
     
 ]
 

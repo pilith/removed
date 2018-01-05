@@ -4,10 +4,10 @@ from .models import playerChar
 class charForm(ModelForm):
     class Meta:
         model = playerChar
-        fields = '__all__' 
+        fields = ['race', 'charclass', 'level', 'name', 
+                  'strength', 'dex', 'const', 'intel', 'wis', 
+                  'char', 'inspiration', 'skills',
+                 ]
 
-#['race', 'charclass', 'level', 'name', 
-#                  'strength', 'dex', 'const', 'intel', 'wis', 
-#                  'char', 'inspiration',
-#                 ]
+
 
