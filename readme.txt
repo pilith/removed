@@ -2,8 +2,12 @@ appdirs==1.4.3
 cowpy==1.0.1
 Django==2.0.1
 django-bootstrap3==9.0.0
+django-bootstrap4==0.0.5
 gunicorn==19.7.1
+jedi==0.11.1
 packaging==16.8
+parso==0.1.1
+pkg-resources==0.0.0
 pyparsing==2.2.0
 pytz==2017.3
 six==1.10.0

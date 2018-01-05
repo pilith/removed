@@ -26,7 +26,7 @@ SECRET_KEY = 'secret_key.py'
 
 DEBUG = True 
 
-ALLOWED_HOSTS = ['pilith.com', 'www.pilith.com']
+ALLOWED_HOSTS = ['localhost', 'pilith.com', 'www.pilith.com']
 
 
 # Application definition
@@ -40,12 +40,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # HTML tables
-    'bootstrap3',
+    'bootstrap4',
 
     # My apps
     'removed',
     'restaurants',
     'dnd',
+    'accounts',
 ]
 
 MIDDLEWARE = [

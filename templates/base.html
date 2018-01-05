@@ -1,5 +1,6 @@
+<!doctype html>
 {% load static %}
-<html>
+<html lang=en>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,19 +27,17 @@
                   <li><a href='#'>Boardgames</a></li>
                   <li><a href='{% url 'dnd:index' %}'>Roll Player</a></li>
                   <li><a href="{% url 'restaurants:credits' %}">Credits</a></li>
-                  {% if user.is_authenticated %}
-                    <li float:'right'><a href="{% url 'logout' %}">Logout</a></li>
-                  {% else %}
-                    <li float:'right'><a href="{% url 'login' %}?next={{request.path}}">Login</a></li>
-                  {% endif %}
+                    {% if user.is_authenticated %}
+                      <li float:'right'><a href="{% url 'logout' %}">Logout</a></li>
+                    {% else %}
+                      <li float:'right'><a href="{% url 'login' %}?next={{request.path}}">Login</a></li>
+                    {% endif %}
                 </ul>
               </nav>
             </div>
           </div>
 
-          <div class="inner cover">
-            {% block content %}{% endblock content %}
-          </div>
+          {% block content %}{% endblock content %}
         </div>
       </div>
     </div>

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+<h3>
+  Login<br>
+  <small class='text_muted'>Unless you don't have an account <br> 
+    Then please <a class='btn btn-outline-secondary'href='{% url accounts:signup %}' role=button>signup</a></small>
+</h3>
+
+
