@@ -24,7 +24,7 @@ SECRET_KEY = 'secret_key.py'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = True 
+DEBUG = False 
 
 ALLOWED_HOSTS = ['localhost', 'pilith.com', 'www.pilith.com']
 
