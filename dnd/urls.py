@@ -1,13 +1,13 @@
 # Views for dnd app. called from project 'settings.py'
-from django.urls import path, re_path
+from django.conf.urls import url
 from . import views
 
 app_name = 'dnd'
 urlpatterns = [
-
-    path('', views.index, name='index'),
-    path('dnd/new', views.new_char, name='new_char'),
-    re_path('dnd/edit/(?P<char_id>\d+)$', views.edit_char, name='edit_char'),
-    re_path('dnd/view/ (?P<char_id>\d+)$', views.view_char, name='view_char'), 
+    # home page
+    url(r'^$', views.index, name='index'),
+    url(r'^dnd/new$', views.new_char, name='new_char'),
+#    url(r'^dnd/edit$', views.edit_char, name='edit_char'),
+    
 ]
 

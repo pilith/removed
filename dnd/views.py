@@ -3,7 +3,6 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
-from django.core.exceptions import PermissionDenied
 
 # app imports
 
@@ -18,7 +17,6 @@ def index(request):
 
 @login_required
 def new_char(request):
-    """ Making a new character"""
     if request.method == 'POST':
         form = charForm(request.POST)
         if form.is_valid():
@@ -31,29 +29,5 @@ def new_char(request):
         form = charForm()
 
     return render(request, 'dnd/new_char.html', {'form': form})        
-@login_required
-def view_char(request, char_id):
-    """ view an already created character"""
-    character = playerChar.objects.get(pk=char_id)
-    if request.user != character.user:
-        raise PermissionDenied
-    else:
-        return render(request, 'dnd/view_char.html', {'character': character}) 
 
-@login_required
-def edit_char(request, char_id):
-    """edit an already created character"""
-    character = playerChar.objects.get(pk=char_id)
-    if request.user != character.user:  # don't let other people edit someone elses characters
-        raise PermissionDenied
-    else:
-        if request.method == 'POST':
-            form = charForm(instance=character, data=request.POST)
-            if form.is_valid():
-                form.save()
-                return HttpResponseRedirect(reverse('dnd:index'))
-        else:
-            form = charForm(instance=character)
-    
-        context = { 'character':character, 'form':form }
-        return render(request, 'dnd/edit_char.html', context)
+#def edit_char(request):
