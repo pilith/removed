@@ -14,7 +14,8 @@
               <h5 class='card-title'>{{ character.name }}</h5>
               <p class='card-text'>{{ character.class }} {{ character.race }}<br>
                 Level: {{ character.level }}</p>
-              <a href='#' class='btn btn-secondary' role='button'>View Character</a>
+              <a href='{% url 'dnd:view_char' character.id %}' class='btn btn-primary' role='button'>View Character</a>
+              <a href='{% url 'dnd:edit_char' character.id %}' class='btn btn-secondary' role='button'>Edit Character</a>
             </div>
           </div>
         </div>
