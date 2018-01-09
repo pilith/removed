@@ -14,5 +14,6 @@ db.sqlite3
 gunicorn_start.sh
 run/
 
-# virtual environment
+# python
 venv/
+**/__pycache__
