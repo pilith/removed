@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block content %}
+<div class='container-fluid'>
+  <div class='row'>
+    <div class='col-sm-5'>
+      <h2 style='font-family:"Germania One", cursive; font-size:3rem;'> {{ character.name }} </h2><br>
+      <h4 style='font-family:"Germania One", cursive;'>Level: {{ character.level }} Class: {{ character.charclass }}</h4>
+    </div>
+    <div class='col-sm-auto'>
+      <dl class='row'>
+        <dt class='col-sm-2'>Player</dt>
+        <dd class='col-sm-auto'> {{ character.user }}</dd>
+        <dt class='col-sm-2'>Race</dt>
+        <dd class='col-sm-auto'> {{ character.race }}</dd>
+        <dt class='col-sm-2'>Gold</dt>
+        <dd class='col-sm-auto'> {{ character.gold }}</dd>
+        <dt class='col-sm-2'>Exp</dt>
+        <dd class='col-sm-auto'> {{ character.exp }}</dd>
+      </dl>
+    </div>
+  </div> 
+  <div class='row'>
+    <div class='col-sm-1'> 
+      <ul style='list-style-type:none'>
+        <li><p align='center' id='roll'></p></li>
+        <li><button id='d4_button' class="btn btn-primary btn-lg">D4</button></li>
+        <li><button id='d6_button' class="btn btn-primary btn-lg">D6</button></li>
+        <li><button id='d8_button' class="btn btn-primary btn-lg">D8</button></li>
+        <li><button id='d10_button' class="btn btn-primary btn-lg">D10</button></li>
+        <li><button id='d12_button' class="btn btn-primary btn-lg">D12</button></li>
+        <li><button id='d20_button' class="btn btn-primary btn-lg">D20</button></li>
+        <li><script src="{% static "dnd/dice.js" %}"></script></li>
+      </ul>
+   </div>
+   <div class='col-sm-2'>
+      <ul style='list-style-type:none;'>
+        <li><div class='card text-center border-danger' style='max-width: 10rem;'>
+          <div class='card-body text-dark'>
+            <h5 class='card-title'>STRENGTH</h5>
+            <p class='card-text' style='font-size:25px'>{{ character.strength }}</p>
+          </div>
+        </div></li>
+        <li><div class='card text-center border-danger' style='max-width: 10rem;'>
+          <div class='card-body text-dark'>
+            <h5 class='card-title'>DEXTERITY</h5>
+            <p class='card-text' style='font-size:25px'>{{ character.dex }}</p>
+          </div>
+        </div></li>
+        <li><div class='card text-center border-danger' style='max-width: 10rem;'>
+          <div class='card-body text-dark'>
+            <h5 class='card-title' style='font-size:0.9rem;'>CONSTITUTION</h5>
+            <p class='card-text' style='font-size:25px'>{{ character.const }}</p>
+          </div>
+        </div></li>
+        <li><div class='card text-center border-danger' style='max-width: 10rem;'>
+          <div class='card-body text-dark'>
+            <h5 class='card-title' style='font-size:0.9rem;'>INTELLIGENCE</h5>
+            <p class='card-text' style='font-size:25px'>{{ character.intel }}</p>
+          </div>
+        </div></li>
+        <li><div class='card text-center border-danger' style='max-width: 10rem;'>
+          <div class='card-body text-dark'>
+            <h5 class='card-title'>WISDOM</h5>
+            <p class='card-text' style='font-size:25px'>{{ character.wis }}</p>
+          </div>
+        </div></li>
+        <li><div class='card text-center border-danger' style='max-width: 10rem;'>
+          <div class='card-body text-dark'>
+            <h5 class='card-title'>CHARISMA</h5>
+            <p class='card-text' style='font-size:25px'>{{ character.char }}</p>
+          </div>
+        </div></li>
+      </ul>
+    </div>
+</div>
+
+{% endblock content %}
+

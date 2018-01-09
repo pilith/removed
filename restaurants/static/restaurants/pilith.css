@@ -121,3 +121,17 @@ body {
   font-size:30px;
   background: red;
   text-color: white;
+.left-div
+{
+  display: inline-block;
+  max-width 80px;
+  text-align: left;
+  padding: 10px;
+  border-radius: 3px;
+  margin: 5px;
+  vertical-align: top;
+}
+.right-div
+{
+  display: inline-block;
+}

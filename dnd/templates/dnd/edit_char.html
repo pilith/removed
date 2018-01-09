@@ -4,8 +4,8 @@
 
 {% block content %}
 
-<h1 class="cover-heading">Make a DnD character</h1>
-<form role='form' action='' method='post'>
+<h1 class="cover-heading">Editing {{ character.name }}</h1>
+<form role='form' action='{% url 'dnd:edit_char' character.id %}' method='post'>
   {% csrf_token %}
   <div class='container'>
     <div class='row'>
@@ -17,18 +17,23 @@
        {% endfor %}
       </div>
       <div class='col-sm-2'>
-        {% for v,t in form.skills.field.choices %}
-          <div class='form-check form-check-inline'>
-            <input class='form-check-input' id='id_skills_{{ forloop.counter0 }}' name='{{ form.skills.name }}' 
-              type='checkbox' value='{{ v }}' {% if v in checked_skills %} checked='checked' {% endif %}>
-            <label class='form-check-label' for='id_skills_{{ forloop.counter0 }}'>{{ t }}</label>
-          </div>
-        {% endfor %}
+          {% for v,t in form.skills.field.choices %}
+            <div class='form-check form-check-inline'>
+              {% if v in form.skills %} 
+                <input class='form-check-input' id='id_skills_{{ forloop.counter0 }}' name='{{ form.skills.name }}' 
+                  type='checkbox' value='{{ v }}' checked>
+              {% else %}
+                <input class='form-check-input' id='id_skills_{{ forloop.counter0 }}' name='{{ form.skills.name }}' 
+                  type='checkbox' value='{{ v }}'>
+              {% endif %}
+              <label class='form-check-label' for='id_skills_{{ forloop.counter0 }}'>{{ t }}</label>
+            </div>
+          {% endfor %}
       </div>
     </div>
   </div>
   {% buttons %}
-    <button class='btn btn-default' type='submit'>Create!</button>
+    <button class='btn btn-default' type='submit'>Submit</button>
   {% endbuttons %}
 </form> 
 
