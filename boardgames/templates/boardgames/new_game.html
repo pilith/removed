@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+<h1 class="cover-heading">Add a Game</h1>
+<form role='form' action='' method='post'>
+  {% csrf_token %}
+  {% bootstrap_form form %}
+
+  {% buttons %}
+    <button class='btn btn-default' type='submit'>Create!</button>
+  {% endbuttons %}
+</form> 
+
+
+
+{% endblock content %}
+

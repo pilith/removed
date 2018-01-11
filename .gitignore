@@ -4,11 +4,8 @@ randomrestaurant/secret_key.py
 
 
 # other parts of website
-boardgames/
 db.sqlite3
-#restaurants/
-#static/
-#templates/
+media/
 
 # gunicorn
 gunicorn_start.sh

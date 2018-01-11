@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+<h1 class="cover-heading">Editing {{ character.name }}</h1>
+<form role='form' action='{% url 'dnd:edit_char' character.id %}' method='post'>
+  {% csrf_token %}
+  <div class='container'>
+    <div class='row'>
+      <div class='col-sm-8'>
+       {% for field in form %}   
+         {% if not field.field.choices %}
+           {% bootstrap_field field %}
+         {% endif %}
+       {% endfor %}
+      </div>
+      <div class='col-sm-2'>
+          {% for v,t in form.skills.field.choices %}
+            <div class='form-check form-check-inline'>
+              {% if v in form.skills %} 
+                <input class='form-check-input' id='id_skills_{{ forloop.counter0 }}' name='{{ form.skills.name }}' 
+                  type='checkbox' value='{{ v }}' checked>
+              {% else %}
+                <input class='form-check-input' id='id_skills_{{ forloop.counter0 }}' name='{{ form.skills.name }}' 
+                  type='checkbox' value='{{ v }}'>
+              {% endif %}
+              <label class='form-check-label' for='id_skills_{{ forloop.counter0 }}'>{{ t }}</label>
+            </div>
+          {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% buttons %}
+    <button class='btn btn-default' type='submit'>Submit</button>
+  {% endbuttons %}
+</form> 
+
+
+
+
+
+<p align='center' id='roll'></p>
+<button id='d4_button' class="btn btn-primary btn-lg">D4</button>
+<button id='d6_button' class="btn btn-primary btn-lg">D6</button>
+<button id='d8_button' class="btn btn-primary btn-lg">D8</button>
+<button id='d10_button' class="btn btn-primary btn-lg">D10</button>
+<button id='d12_button' class="btn btn-primary btn-lg">D12</button>
+<button id='d20_button' class="btn btn-primary btn-lg">D20</button>
+<script src="{% static "dnd/dice.js" %}"></script>
+
+{% endblock content %}
+

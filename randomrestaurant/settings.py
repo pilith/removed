@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'bootstrap4',
 
     # My apps
-    'removed',
+    #'removed',
+    'boardgames',
     'restaurants',
     'dnd',
     'accounts',
@@ -74,6 +75,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -136,6 +138,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = '/var/www/pilith.com/static/'
 #STATICFILES_DIRS = [ '/var/www/static/' ]
+
+# user uploaded files
+MEDIA_ROOT = '/home/david/git/removed/media/' # wont work on actual server - better change to a real filepath
+MEDIA_URL = '/media/'
 
 # re direct to index after login instead of going to accounts/profile
 LOGIN_REDIRECT_URL = '/random/'

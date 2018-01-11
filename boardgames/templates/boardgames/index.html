@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+  {% if user.is_authenticated %}
+    <h1 class="cover-heading">{{user.get_username}}'s Boardgames</h1>
+    <div class='row'>
+      {% for game in user.games.all %}
+        <div class='col-sm-2'>
+          <div class='card'>
+            <img class='card-img-top' src='{{ game.cover.url }}' alt='{{ game.name }}'>
+            <div class='card-body'>
+              <h5 class='card-title'>{{ game.name }}</h5>
+              <p class='card-text'>{{ game.p_max }} {{ game.age }}<br>
+                Level: {{ game.p_min }}</p>
+              <a href='{% url 'boardgames:edit_game' game.id %}' class='btn btn-secondary' role='button'>Edit Game</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <a class='btn btn-lg btn-success' href='{% url 'boardgames:new_game' %}' role='button'>Add new game</a>
+  {% else %}
+    <p class='lead'> Please sign up/sign in to roll a character</p>
+    <a href="{% url 'login' %}?next={{request.path}}">Login</a>
+  {% endif %}
+
+
+{% endblock content %}
+

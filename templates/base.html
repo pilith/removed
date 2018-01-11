@@ -25,7 +25,7 @@
                 <ul class="nav masthead-nav">
                   <li><a href='https://www.pilith.com'>Home</a></li>
                   <li><a href="{% url 'restaurants:index' %}">Lunch</a></li>
-                  <li><a href='#'>Boardgames</a></li>
+                  <li><a href='{% url 'boardgames:index' %}'>Boardgames</a></li>
                   <li><a href='{% url 'dnd:index' %}'>Roll Player</a></li>
                   <li><a href="{% url 'restaurants:credits' %}">Credits</a></li>
                     {% if user.is_authenticated %}
